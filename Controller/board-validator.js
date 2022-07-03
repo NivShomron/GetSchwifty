@@ -1,5 +1,4 @@
-class BoardValidator {
-    
+class BoardValidator {  
     validate(boardSize, switchesCount, emptyCellRow) {
         if (boardSize % 2 == 0) {
             if (switchesCount + emptyCellRow % 2 == 0) {

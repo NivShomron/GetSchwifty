@@ -1,5 +1,6 @@
 import "./board"
 import "./array-shuffler"
+
 class CellsValuesCreator {
     constructor(board, arrayShuffler) {
         this.board = board;

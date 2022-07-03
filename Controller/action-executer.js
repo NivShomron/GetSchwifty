@@ -1,4 +1,5 @@
 import "./board"
+
 class ActionExecuter {
     constructor(board) {
         this.board = board;

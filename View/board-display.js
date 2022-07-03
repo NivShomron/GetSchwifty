@@ -1,4 +1,6 @@
-function display() {
+import ActionValidator from "./Controller/action-validator"
+
+function display(actionValidator) {
     var size = 3;
     for(let i = 1; i <= size; i++) { 
         var toAdd = document.createDocumentFragment();
@@ -10,6 +12,7 @@ function display() {
             btn.addEventListener("click", () => {
                 alert(i);
                 alert(j);
+                actionValidator.validate([i, j]);
             });
             toAdd.appendChild(btn);
         }

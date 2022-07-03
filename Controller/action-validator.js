@@ -1,4 +1,5 @@
 import "./board"
+
 class ActionValidator {
     constructor(board, actionExecuter) {
         this.board = board;
