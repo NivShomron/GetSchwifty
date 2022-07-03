@@ -16,19 +16,3 @@ function display() {
         document.body.appendChild(toAdd);
     }
 }
-
-/*
-class BoardDisplay {
-
-    display(){
-        var size = 3;
-        for(let i = 0; i < size; i++){
-            var btn = document.createElement("button");        
-            btn.addEventListener("click", alert(i));
-            var t = document.createTextNode("button text");       
-            btn.appendChild(t);                                
-            document.getElementById('button-holder').appendChild(btn);     
-        }
-    }
-}
-*/
