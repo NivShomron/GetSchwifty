@@ -2,12 +2,13 @@ class BoardCreator {
     constructor(board, boardValidator, cellsValuesCreator) {
         this.board = board;
         this.boardValidator = boardValidator;
-        this.cellsValues = cellsValuesCreator.create(this.board);
+        this.cellsValuesCreator = cellsValuesCreator;
     }
 
     create() {
         do {
-            this.cellsValues.forEach(number => {
+            var cellsValues = this.cellsValuesCreator.create(this.board);
+            cellsValues.forEach(number => {
                 this.board.addCell(number)
             });
         } while (this.boardValidator.validate(this.board.getSwitchesCount()));
