@@ -1,3 +1,4 @@
+import "./board"
 class MovementExecuter {
     constructor(board) {
         this.board = board;
