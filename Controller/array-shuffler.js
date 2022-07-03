@@ -1,4 +1,4 @@
-class Shuffle {
+class ArrayShuffler {
 
     shuffle(array) {
         let currentIndex = array.length,  randomIndex;
