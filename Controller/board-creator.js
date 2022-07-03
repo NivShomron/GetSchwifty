@@ -24,5 +24,13 @@ class BoardCreator {
            const el = array.splice(random, 1)[0];
            console.log(el);
         }
-     };
+    };
+
+    create() {
+        do {
+            shuffledGameNumbers.forEach(number => {
+                this.board.addCell(number)
+            });
+        } while (this.boardValidator.validate(this.board.getSwitchesCount()));
+    }
 }
