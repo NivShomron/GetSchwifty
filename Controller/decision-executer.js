@@ -1,5 +1,5 @@
 import "./board"
-class MovementExecuter {
+class DecisionExecuter {
     constructor(board) {
         this.board = board;
     }
