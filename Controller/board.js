@@ -1,5 +1,4 @@
 class Board {
-
     constructor(size) {
         this.board = [];
         this.size = size;

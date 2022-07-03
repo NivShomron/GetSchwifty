@@ -1,5 +1,4 @@
 import ActionValidator from "./Controller/action-validator"
-
 function display(actionValidator) {
     var size = 3;
     for(let i = 1; i <= size; i++) { 
