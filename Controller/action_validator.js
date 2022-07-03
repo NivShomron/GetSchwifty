@@ -9,7 +9,7 @@ class ActionValidator {
         var emptyCell = this.board.getEmptyCell()
         // check if cellDecision is adjacent to empty cell
         if (true) {
-            this.decisionExecuter.execute(cellDecision);
+            this.actionExecuter.execute(cellDecision);
         }
     }
 }
