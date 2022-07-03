@@ -15,11 +15,12 @@ class Bootstrapper {
         var arrayShuffler = new ArrayShuffler();
 
         var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
-        var BoardCreator = new BoardCreator(board, boardValidator, cellsValuesCreator);
+        var boardCreator = new BoardCreator(board, boardValidator, cellsValuesCreator);
 
         var actionExecuter = new ActionExecuter(board);
         var actionValidator = new ActionValidator(board, actionExecuter);
 
+        boardCreator.create();
         var boardDisplay = new BoardDisplay(actionValidator);
     }
 }
