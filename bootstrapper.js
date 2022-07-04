@@ -27,13 +27,18 @@ function init() {
     var boardValidator = new BoardValidator();
     var arrayShuffler = new ArrayShuffler();
 
+    var switchesCounter = new SwitchesCounter(board);
+    var endGame = new EndGame();
+
     var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
-    var boardCreator = new BoardCreator(board, boardValidator, cellsValuesCreator);
+    var boardCreator = new BoardCreator(board, boardValidator, cellsValuesCreator, switchesCounter);
 
     var actionExecuter = new ActionExecuter(board, actionValidator);
     var actionValidator = new ActionValidator(board);
 
+    var boardUpdater = new BoardUpdater(switchesCounter, endGame);
+
     boardCreator.create();
-    var gameDisplay = new GameDisplay(actionExecuter);
+    var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
     gameDisplay.display(board);
 }
