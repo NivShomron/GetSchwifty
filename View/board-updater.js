@@ -12,7 +12,7 @@ class BoardUpdater {
         }
 
         if (this.switchesCounter.count() == 0) {
-            this.endGame.end();
+            this.endGame.end(allButtons);
         }
     }
 }
