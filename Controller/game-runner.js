@@ -1,17 +1,17 @@
 class GameRunner {
     constructor(board, boardCreator, gameDisplay, leaderboard, stopwatch, 
-        scoreCreator, userInput) {
+        scoreCreator, stringUserInput) {
         this.board = board;
         this.boardCreator = boardCreator;
         this.gameDisplay = gameDisplay;
         this.leaderboard = leaderboard;
         this.stopwatch = stopwatch;
         this.scoreCreator = scoreCreator;
-        this.userInput = userInput;
+        this.stringUserInput = stringUserInput;
     }
     
     run() {
-        var name = this.userInput.receiveName();
+        var name = this.stringUserInput.receive();
 
         var startTime = Date.now();
         this.stopwatch.start();
@@ -19,12 +19,8 @@ class GameRunner {
         this.boardCreator.create(this.board);
         this.gameDisplay.display(this.board);
         
-        function checkStopwatchStatus() {
-            if(this.stopwatch.running) {
-               window.setTimeout(checkStopwatchStatus, 100);
-            }
-        }
-               
+        // while (this.stopwatch.running) {};
+
         var score = this.scoreCreator.create(name, this.stopwatch.elapsedTime, 
             this.board.size, startTime);
 
