@@ -1,5 +1,3 @@
-import "./board"
-
 class ActionExecuter {
     constructor(board, actionValidator) {
         this.board = board;
@@ -7,7 +5,7 @@ class ActionExecuter {
     }
 
     execute(cellDecision) {
-        if (this.actionValidator.validate()){
+        if (this.actionValidator.validate(cellDecision)){
             var cellValue = this.board[cellDecision[0]][cellDecision[1]];
             var emptyCell = this.board.getEmptyCell();
     

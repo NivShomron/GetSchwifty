@@ -1,5 +1,3 @@
-import "./board"
-
 class ActionValidator {
     constructor(board) {
         this.board = board;
