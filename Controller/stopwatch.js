@@ -11,7 +11,6 @@ class Stopwatch {
             const seconds = parseInt((elapsedTime/1000)%60)
             const minutes = parseInt((elapsedTime/(1000*60))%60)
             const hour = parseInt((elapsedTime/(1000*60*60))%24);
-            displayTime(hour, minutes, seconds, milliseconds)
         }, 100);
     }
 
@@ -23,11 +22,6 @@ class Stopwatch {
     resetStopwatch() {
         this.stopwatch.elapsedTime = 0
         this.stopwatch.startTime = Date.now()
-        displayTime(0, 0, 0, 0)
-    }
-    
-    displayTime(hour, minutes, seconds, milliseconds) {
-        const leadZeroTime = [hour, minutes, seconds, milliseconds].map(time => time < 10 ? `0${time}` : time)
     }
 }
 
