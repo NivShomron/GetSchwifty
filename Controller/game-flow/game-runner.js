@@ -19,7 +19,7 @@ class GameRunner {
         this.boardCreator.create(this.board);
         this.gameDisplay.display(this.board);
         
-        // while (this.stopwatch.running) {};
+        // add loop to exit when stopwatch stops running
 
         var score = this.scoreCreator.create(name, this.stopwatch.elapsedTime, 
             this.board.size, startTime);
