@@ -26,3 +26,5 @@ class Board {
         }
     }
 }
+
+export { Board };

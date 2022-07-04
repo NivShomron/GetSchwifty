@@ -6,3 +6,5 @@ class InputValidator {
         return parseInt(input);
     }
 }
+
+export { InputValidator };

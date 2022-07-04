@@ -8,3 +8,5 @@ class EndGame {
         });
     }
 }
+
+export { EndGame };

@@ -17,3 +17,5 @@ class BoardCreator {
         } while (this.boardValidator.validate(this.switchesCounter.count()));
     }
 }
+
+export { BoardCreator };

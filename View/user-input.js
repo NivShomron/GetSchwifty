@@ -10,3 +10,5 @@ class UserInput {
         return input;
     }
 }
+
+export { UserInput };

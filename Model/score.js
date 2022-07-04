@@ -11,3 +11,5 @@ class Score {
         this.rank = rank; 
     }
 }
+
+export { Score };

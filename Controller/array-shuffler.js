@@ -13,3 +13,5 @@ class ArrayShuffler {
         return array;
       }
 }
+
+export { ArrayShuffler };

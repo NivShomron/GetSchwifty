@@ -17,3 +17,5 @@ class SwitchesCounter {
         return switchesCount;
     }
 }
+
+export { SwitchesCounter };

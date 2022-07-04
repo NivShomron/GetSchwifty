@@ -25,3 +25,5 @@ class Leaderboard {
         }
     }
 }
+
+export { Leaderboard };

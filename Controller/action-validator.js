@@ -17,3 +17,5 @@ class ActionValidator {
         return false;
     }
 }
+
+export { ActionValidator };

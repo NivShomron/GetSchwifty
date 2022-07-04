@@ -50,3 +50,5 @@ class BoardDisplay {
         }
     }
 }
+
+export { BoardDisplay };

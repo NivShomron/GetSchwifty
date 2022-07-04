@@ -14,3 +14,5 @@ class BoardValidator {
         }
     }
 }
+
+export { BoardValidator };
