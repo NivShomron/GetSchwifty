@@ -3,7 +3,7 @@ class Stopwatch {
         this.stopwatch = { elapsedTime: 0 }
     }
 
-    startStopwatch() {
+    start() {
         this.stopwatch.startTime = Date.now();
         this.stopwatch.intervalId = setInterval(() => {
             const elapsedTime = Date.now() - this.stopwatch.startTime + this.stopwatch.elapsedTime
@@ -14,12 +14,12 @@ class Stopwatch {
         }, 100);
     }
 
-    stopStopwatch() {
+    stop() {
         this.stopwatch.elapsedTime += Date.now() - this.stopwatch.startTime
         clearInterval(this.stopwatch.intervalId)
     }
 
-    resetStopwatch() {
+    reset() {
         this.stopwatch.elapsedTime = 0
         this.stopwatch.startTime = Date.now()
     }
