@@ -23,30 +23,26 @@ function display() {
     }
 }
 
-/*
+
 class BoardDisplay {
-    constructor(actionExecuter) {
+    constructor(actionExecuter, boardUpdater) {
         this.actionExecuter = actionExecuter;
+        this.boardUpdater = boardUpdater;
     }
 
     display(board) {
-        var size = 3;
-
-        for(let i = 0; i < size; i++) { 
+        for(let i = 0; i < board.size; i++) { 
             var toAdd = document.createDocumentFragment();
             var div = document.createElement("div")
             toAdd.appendChild(div);
     
-            for(let j = 0; j < size; j++){
+            for(let j = 0; j < board.size; j++){
                 let btn = document.createElement("button");
     
-                btn.innerHTML = 0; 
-                //btn.innerHTML = board[i][j];
+                btn.innerHTML = board.cellAt(i, j);
                 btn.addEventListener("click", () => {
-                    alert(i);
-                    alert(j);
-                    // this.actionExecuter.execute(btn, [i, j]);
-                    // boardUpdater.update(board);
+                    this.actionExecuter.execute(btn, [i, j]);
+                    this.boardUpdater.update(board);
                 });
                 toAdd.appendChild(btn);
             }
@@ -54,4 +50,3 @@ class BoardDisplay {
         }
     }
 }
-*/
