@@ -8,6 +8,10 @@ class Board {
         }
     }
 
+    cellAt(x, y) {
+        return board[x][y];
+    }
+
     addCell(x, y, value) {
         board[x][y] = value;
     }
