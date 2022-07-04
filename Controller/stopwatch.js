@@ -9,13 +9,13 @@ class Stopwatch {
     }
 
     stop() {
-        this.elapsedTime += Date.now() - this.startTime
+        this.elapsedTime += Date.now() - this.startTime;
         this.running = false;
     }
 
     reset() {
-        this.elapsedTime = 0
-        this.startTime = Date.now()
+        this.elapsedTime = 0;
+        this.startTime = Date.now();
     }
 }
 
