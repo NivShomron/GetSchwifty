@@ -12,11 +12,11 @@ class GameDisplay {
     
             for(let j = 0; j < board.size; j++){
                 let btn = document.createElement("button");
-                if (board.cellAt(i, j) == -1) {
+                if (board.getCellAt(i, j) == -1) {
                     btn.innerHTML = ".";
                 }
                 else {
-                    btn.innerHTML = board.cellAt(i, j);
+                    btn.innerHTML = board.getCellAt(i, j);
                 }
                 btn.addEventListener("click", () => {
                     this.actionExecuter.execute(btn, [i, j]);

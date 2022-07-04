@@ -8,7 +8,7 @@ class SwitchesCounter {
         shuffledGameNumbers.forEach(number => {
             for (let i = 0; i < this.board.size; i++) {
                 for (let j = i; j < this.board.size; j++) {
-                    if (this.board.cellAt(i, j) < number) {
+                    if (this.board.getCellAt(i, j) < number) {
                         switchesCount++;
                     }
                 }

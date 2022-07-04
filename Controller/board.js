@@ -8,7 +8,7 @@ class Board {
         }
     }
 
-    cellAt(x, y) {
+    getCellAt(x, y) {
         return this.board[x][y];
     }
 

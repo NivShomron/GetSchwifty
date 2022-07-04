@@ -11,7 +11,7 @@ class ArrayShuffler {
             array[randomIndex], array[currentIndex]];
         }
         return array;
-      }
+    }
 }
 
 export { ArrayShuffler };
