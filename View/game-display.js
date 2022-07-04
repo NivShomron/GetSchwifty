@@ -19,7 +19,7 @@ class GameDisplay {
                     btn.innerHTML = board.getCellAt(i, j);
                 }
                 btn.addEventListener("click", () => {
-                    this.actionExecuter.execute(btn, [i, j]);
+                    this.actionExecuter.execute([i, j]);
                     this.boardUpdater.update(board);
                 });
                 toAdd.appendChild(btn);
