@@ -25,18 +25,4 @@ class Board {
             }
         }
     }
-
-    getSwitchesCount(shuffledGameNumbers) {
-        var switchesCount = 0;
-        shuffledGameNumbers.forEach(number => {
-            for (let i = 0; i < this.size; i++) {
-                for (let j = i; j < this.size; j++) {
-                    if (board[i][j] < number) {
-                        switchesCount++;
-                    }
-                }
-            }
-        });
-        return switchesCount;
-    }
 }
