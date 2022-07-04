@@ -15,12 +15,14 @@ import { SwitchesCounter } from "./Controller/switches-counter.js";
 import { BoardUpdater } from "./View/board-updater.js";
 import { Stopwatch } from "./Controller/stopwatch.js";
 import { GameRunner } from "./Controller/game-runner.js"
+import { ScoreCreator } from "./Model/score-creator.js"
 
 var starting_leaderboard = []
 var leaderboardSize = 5;
 var sortByScore = new SortByScore();
 
 var leaderboard = new Leaderboard(starting_leaderboard, leaderboardSize, sortByScore);
+var scoreCreator = new ScoreCreator();
 var stopwatch = new Stopwatch();
 
 var inputValidator = new InputValidator();
@@ -44,5 +46,6 @@ var boardUpdater = new BoardUpdater(switchesCounter, endGame);
 
 var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
 
-var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch);
+var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch,
+     scoreCreator, userInput);
 gameRunner.run();
