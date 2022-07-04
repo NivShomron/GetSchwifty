@@ -9,17 +9,17 @@ class Board {
     }
 
     cellAt(x, y) {
-        return board[x][y];
+        return this.board[x][y];
     }
 
     addCell(x, y, value) {
-        board[x][y] = value;
+        this.board[x][y] = value;
     }
 
     getEmptyCell() {
         for (let i = 0; i < this.size; i++) {
             for (let j = 0; j < this.size; j++) {
-                if (board[i][j] == undefined) {
+                if (this.board[i][j] == undefined) {
                     return (x, y);
                 }
             }
