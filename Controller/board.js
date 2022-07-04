@@ -25,6 +25,10 @@ class Board {
             }
         }
     }
+
+    getFlattenedBoard() {
+        return [].concat.apply([], this.board);
+    }
 }
 
 export { Board };
