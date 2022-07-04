@@ -1,6 +1,7 @@
 class BoardUpdater {
-    constructor(switchesCounter, endGame) {
+    constructor(switchesCounter, boardChecker, endGame) {
         this.switchesCounter = switchesCounter;
+        this.boardChecker = boardChecker;
         this.endGame = endGame;
     }
 
@@ -17,9 +18,7 @@ class BoardUpdater {
                 button.innerHTML = currentCell;
             }
         }
-
-        var cellsValues = board.getFlattenedBoard();
-        if (this.switchesCounter.count(cellsValues) == 0) {
+        if (this.boardChecker.ended(board.getFlattenedBoard())) {
             this.endGame.end(allButtons);
         }
     }
