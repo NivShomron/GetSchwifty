@@ -10,6 +10,9 @@ import InputValidator from "./Controller/input-validator"
 import UserInput from "./View/user-input"
 import Leaderboard from "./Model/leaderboard"
 import SortByScore from "./Model/sort-by-score"
+import EndGame from "./Controller/end-game"
+import SwitchesCounter from "./Controller/switches-counter"
+import BoardUpdater from "./View/board-updater"
 
 function init() {
     var leaderboard = []
@@ -33,8 +36,8 @@ function init() {
     var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
     var boardCreator = new BoardCreator(board, boardValidator, cellsValuesCreator, switchesCounter);
 
-    var actionExecuter = new ActionExecuter(board, actionValidator);
     var actionValidator = new ActionValidator(board);
+    var actionExecuter = new ActionExecuter(board, actionValidator);
 
     var boardUpdater = new BoardUpdater(switchesCounter, endGame);
 
