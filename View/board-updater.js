@@ -11,7 +11,8 @@ class BoardUpdater {
             button.innerHTML = board.getCellAt(Math.floor(i / 3), i % 3);
         }
 
-        if (this.switchesCounter.count() == 0) {
+        var cellsValues = board.getFlattenedBoard();
+        if (this.switchesCounter.count(cellsValues) == 0) {
             this.endGame.end(allButtons);
         }
     }
