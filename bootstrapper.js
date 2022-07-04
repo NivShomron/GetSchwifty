@@ -14,7 +14,7 @@ import { Leaderboard } from "./Model/leaderboards/leaderboard.js";
 import { SortByScore } from "./Controller/leaderboard-logic/sort-by-score.js";
 import { EndGame } from "./Controller/game-flow/end-game.js";
 import { SwitchesCounter } from "./Controller/board-creation/switches-counter.js";
-import { BoardUpdater } from "./View/output/board-updater.js";
+import { BoardUpdater } from "./Controller/game-flow/board-updater.js";
 import { Stopwatch } from "./Controller/time-measure/stopwatch.js";
 import { GameRunner } from "./Controller/game-flow/game-runner.js"
 import { ScoreCreator } from "./Model/scores/score-creator.js";
