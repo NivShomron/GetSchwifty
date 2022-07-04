@@ -6,8 +6,14 @@ import BoardValidator from "./Controller/board-validator"
 import Board from "./Controller/board"
 import CellsValuesCreator from "./Controller/cells_values_creator"
 import BoardDisplay from "./View/board-display"
+import InputValidator from "./Controller/input-validator"
+import UserInput from "./View/user-input"
 
-function init(size) {
+function init() {
+    var inputValidator = new InputValidator();
+    var userInput = new UserInput(inputValidator);
+    var size = userInput.receiveInput();
+
     var board = new Board(size);
 
     var boardValidator = new BoardValidator();
