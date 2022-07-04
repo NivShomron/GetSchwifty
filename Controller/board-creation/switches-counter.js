@@ -3,20 +3,16 @@ class SwitchesCounter {
         this.board = board;
     }
 
-    count(cellsValues) {
+    count() {
+        var cellsValues = this.board.getFlattenedBoard(); 
         var switchesCount = 0;
-        cellsValues.forEach(number => {
-            if (number != "-1") {
-                for (let i = 0; i < this.board.size; i++) {
-                    for (let j = i; j < this.board.size; j++) {
-                        if (this.board.getCellAt(i, j) != -1 &&
-                                this.board.getCellAt(i, j) < number) {
-                            switchesCount++;
-                        }
-                    }
+        for (let i = 0; i < cellsValues.length; i++) {
+            for (let j = i; j < cellsValues.length; j++) {
+                if (cellsValues[i] != -1 && cellsValues[i] < cellsValues[j]) {
+                    switchesCount++;
                 }
             }
-        });
+        }
         return switchesCount;
     }
 }
