@@ -11,20 +11,23 @@ class GameRunner {
     }
     
     run() {
+        var name = this.userInput.receiveName();
+
         var startTime = Date.now();
         this.stopwatch.start();
 
         this.boardCreator.create(this.board);
         this.gameDisplay.display(this.board);
         
-        this.stopwatch.stop()
-
-        var name = this.userInput.receiveName();
-        
+        function checkStopwatchStatus() {
+            if(this.stopwatch.running) {
+               window.setTimeout(checkStopwatchStatus, 100);
+            }
+        }
+               
         var score = this.scoreCreator.create(name, this.stopwatch.elapsedTime, 
             this.board.size, startTime);
 
-        console.log(this.elapsedTime);
         this.leaderboard.addScore(score);
     }
 }
