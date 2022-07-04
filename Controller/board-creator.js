@@ -7,7 +7,7 @@ class BoardCreator {
 
     create(board) {
         do {
-            var cellsValues = this.cellsValuesCreator.create(board);
+            var cellsValues = this.cellsValuesCreator.create();
             var insertPoisiton = 0;
             cellsValues.forEach(number => {
                 board.addCell(Math.floor(insertPoisiton / board.size), insertPoisiton % board.size, number)
