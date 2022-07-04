@@ -1,11 +1,6 @@
 class EndGame {
     end(buttons) {
-        buttons.forEach(button => {
-            button.addEventListener('click', () => 
-            {
-                button.disabled = true;
-            });
-        });
+        Array.prototype.forEach.call(buttons, button => { button.disabled = true; });
     }
 }
 
