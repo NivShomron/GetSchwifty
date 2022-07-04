@@ -3,9 +3,9 @@ class SwitchesCounter {
         this.board = board;
     }
 
-    count(shuffledGameNumbers) {
+    count(cellsValues) {
         var switchesCount = 0;
-        shuffledGameNumbers.forEach(number => {
+        cellsValues.forEach(number => {
             for (let i = 0; i < this.board.size; i++) {
                 for (let j = i; j < this.board.size; j++) {
                     if (this.board.getCellAt(i, j) < number) {
