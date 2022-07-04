@@ -20,39 +20,45 @@ import { GameRunner } from "./Controller/game-flow/game-runner.js"
 import { ScoreCreator } from "./Model/scores/score-creator.js";
 import { BoardChecker } from "./Controller/game-logic/board-checker.js";
 
-var starting_leaderboard = []
-var leaderboardSize = 5;
-var sortByScore = new SortByScore();
+class Bootstrapper {
+     init() {
+          var starting_leaderboard = []
+          var leaderboardSize = 5;
+          var sortByScore = new SortByScore();
+     
+          var leaderboard = new Leaderboard(starting_leaderboard, leaderboardSize, sortByScore);
+          var scoreCreator = new ScoreCreator();
+          var stopwatch = new Stopwatch();
+     
+          var stringInputValidator = new StringInputValidator();
+          var integerInputValidator = new IntegerInputValidator();
+          var stringUserInput = new StringUserInput(stringInputValidator, "What is your name?");
+          var integerUserInput = new IntegerUserInput(integerInputValidator, 
+               "How big do you want the board to be?", 3);
+     
+          var board = new Board(integerUserInput);
+     
+          var boardValidator = new BoardValidator();
+          var arrayShuffler = new ArrayShuffler();
+     
+          var switchesCounter = new SwitchesCounter(board);
+          var boardChecker = new BoardChecker();
+          var endGame = new EndGame(stopwatch);
+     
+          var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
+          var boardCreator = new BoardCreator(boardValidator, cellsValuesCreator, switchesCounter, boardChecker);
+     
+          var actionValidator = new ActionValidator(board);
+          var actionExecuter = new ActionExecuter(board, actionValidator);
+     
+          var boardUpdater = new BoardUpdater(switchesCounter, boardChecker, endGame);
+     
+          var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
+     
+          var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch,
+               scoreCreator, stringUserInput);
+          return gameRunner;
+     }
+}
 
-var leaderboard = new Leaderboard(starting_leaderboard, leaderboardSize, sortByScore);
-var scoreCreator = new ScoreCreator();
-var stopwatch = new Stopwatch();
-
-var stringInputValidator = new StringInputValidator();
-var integerInputValidator = new IntegerInputValidator();
-var stringUserInput = new StringUserInput(stringInputValidator, "What is your name?");
-var integerUserInput = new IntegerUserInput(integerInputValidator, 
-     "How big do you want the board to be?", 3);
-
-var board = new Board(integerUserInput);
-
-var boardValidator = new BoardValidator();
-var arrayShuffler = new ArrayShuffler();
-
-var switchesCounter = new SwitchesCounter(board);
-var boardChecker = new BoardChecker();
-var endGame = new EndGame(stopwatch);
-
-var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
-var boardCreator = new BoardCreator(boardValidator, cellsValuesCreator, switchesCounter, boardChecker);
-
-var actionValidator = new ActionValidator(board);
-var actionExecuter = new ActionExecuter(board, actionValidator);
-
-var boardUpdater = new BoardUpdater(switchesCounter, boardChecker, endGame);
-
-var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
-
-var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch,
-     scoreCreator, stringUserInput);
-gameRunner.run();
+export { Bootstrapper };
