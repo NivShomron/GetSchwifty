@@ -10,7 +10,7 @@ class ActionExecuter {
             var emptyCell = this.board.getEmptyCell();
     
             this.board.cellAt(emptyCell[0], emptyCell[1]) = cellValue;
-            this.board.cellAt(cellDecision[0], cellDecision[1]) = undefined;
+            this.board.cellAt(cellDecision[0], cellDecision[1]) = -1;
         }
     }
 }

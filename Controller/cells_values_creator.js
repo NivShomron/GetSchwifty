@@ -15,7 +15,7 @@ class CellsValuesCreator {
             gameNumbers.push(i + 1);
         }
 
-        gameNumbers.splice(Math.floor(Math.random()*gameNumbers.length), 1);
+        gameNumbers[Math.floor(Math.random()*gameNumbers.length)] = -1;
         return this.arrayShuffler.shuffle(gameNumbers);
     }
 }
