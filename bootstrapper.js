@@ -34,6 +34,6 @@ function init() {
     var actionValidator = new ActionValidator(board);
 
     boardCreator.create();
-    var gameDispkay = new GameDisplay(actionExecuter);
+    var gameDisplay = new GameDisplay(actionExecuter);
     gameDisplay.display(board);
 }
