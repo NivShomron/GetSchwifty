@@ -22,6 +22,7 @@ var leaderboard = new Leaderboard(starting_leaderboard, leaderboardSize, sortByS
 
 var inputValidator = new InputValidator();
 var userInput = new UserInput(inputValidator);
+var name = userInput.receiveName();
 var size = userInput.receiveBoardSize();
 
 var board = new Board(size);
