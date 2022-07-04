@@ -1,6 +1,9 @@
 class BoardValidator {  
-    validate(boardSize, switchesCount, emptyCellRow) {
-        if (boardSize % 2 == 0) {
+    validate(board, switchesCount, emptyCellRow, boardChecker) {
+        if (boardChecker.ended(board.getFlattenedBoard())) {
+            return false;
+        }
+        if (board.size % 2 == 0) {
             if (switchesCount + emptyCellRow % 2 == 0) {
                 return true;
             }
