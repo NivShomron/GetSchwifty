@@ -6,8 +6,10 @@ import { BoardValidator } from "./Controller/board-validator.js";
 import { Board } from "./Controller/board.js";
 import { CellsValuesCreator } from "./Controller/cells-values-creator.js";
 import { GameDisplay } from "./View/game-display.js";
-import { InputValidator } from "./Controller/input-validator.js";
-import { UserInput } from "./View/user-input.js";
+import { IntegerInputValidator } from "./Controller/input-validators/integer-input-validator.js";
+import { StringInputValidator } from "./Controller/input-validators/string-input-validator.js";
+import { StringUserInput } from "./View/user-input/string-user-input.js";
+import { IntegerUserInput } from "./View/user-input/integer-user-input.js";
 import { Leaderboard } from "./Model/leaderboard.js";
 import { SortByScore } from "./Controller/sort-by-score.js";
 import { EndGame } from "./Controller/end-game.js";
@@ -25,10 +27,12 @@ var leaderboard = new Leaderboard(starting_leaderboard, leaderboardSize, sortByS
 var scoreCreator = new ScoreCreator();
 var stopwatch = new Stopwatch();
 
-var inputValidator = new InputValidator();
-var userInput = new UserInput(inputValidator);
+var stringInputValidator = new StringInputValidator();
+var integerInputValidator = new IntegerInputValidator();
+var stringUserInput = new StringUserInput(stringInputValidator);
+var integerUserInput = new IntegerUserInput(integerInputValidator);
 
-var board = new Board(userInput);
+var board = new Board(integerUserInput);
 
 var boardValidator = new BoardValidator();
 var arrayShuffler = new ArrayShuffler();
@@ -47,5 +51,5 @@ var boardUpdater = new BoardUpdater(switchesCounter, endGame);
 var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
 
 var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch,
-     scoreCreator, userInput);
+     scoreCreator, stringUserInput);
 gameRunner.run();
