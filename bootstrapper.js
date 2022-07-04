@@ -34,7 +34,7 @@ var boardValidator = new BoardValidator();
 var arrayShuffler = new ArrayShuffler();
 
 var switchesCounter = new SwitchesCounter(board);
-var endGame = new EndGame();
+var endGame = new EndGame(stopwatch);
 
 var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
 var boardCreator = new BoardCreator(boardValidator, cellsValuesCreator, switchesCounter);
