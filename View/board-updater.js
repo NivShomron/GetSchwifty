@@ -5,7 +5,7 @@ class BoardUpdater {
     }
 
     update(board) {
-        var allButtons = document.getElementsByTagName("*");
+        var allButtons = document.getElementsByTagName("button");
         for (let i = 0; i < allButtons.length; i++) {
             var button = allButtons.item(i);
             button.innerHTML = board.getCellAt(Math.floor(i / 3), i % 3);
