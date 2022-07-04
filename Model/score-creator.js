@@ -3,3 +3,5 @@ class ScoreCreator {
         return new Score(name, gameTime, boardSize, startTime);
     }
 }
+
+export { ScoreCreator };
