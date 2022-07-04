@@ -5,11 +5,19 @@ import BoardCreator from "./Controller/board-creator"
 import BoardValidator from "./Controller/board-validator"
 import Board from "./Controller/board"
 import CellsValuesCreator from "./Controller/cells_values_creator"
-import BoardDisplay from "./View/board-display"
+import GameDisplay from "./View/game-display"
 import InputValidator from "./Controller/input-validator"
 import UserInput from "./View/user-input"
+import Leaderboard from "./Model/leaderboard"
+import SortByScore from "./Model/sort-by-score"
 
 function init() {
+    var leaderboard = []
+    var leaderboardSize = 5;
+    var sortByScore = new SortByScore();
+
+    var leaderboard = new Leaderboard(leaderboard, leaderboardSize, sortByScore);
+
     var inputValidator = new InputValidator();
     var userInput = new UserInput(inputValidator);
     var size = userInput.receiveInput();
@@ -26,6 +34,6 @@ function init() {
     var actionValidator = new ActionValidator(board);
 
     boardCreator.create();
-    var boardDisplay = new BoardDisplay(actionExecuter);
-    boardDisplay.display(board);
+    var gameDispkay = new GameDisplay(actionExecuter);
+    gameDisplay.display(board);
 }
