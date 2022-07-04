@@ -1,3 +1,4 @@
+/*
 function display() {
     var size = 3;
 
@@ -22,9 +23,9 @@ function display() {
         document.body.appendChild(toAdd);
     }
 }
+*/
 
-
-class BoardDisplay {
+class GameDisplay {
     constructor(actionExecuter, boardUpdater) {
         this.actionExecuter = actionExecuter;
         this.boardUpdater = boardUpdater;
@@ -51,4 +52,4 @@ class BoardDisplay {
     }
 }
 
-export { BoardDisplay };
+export { GameDisplay };
