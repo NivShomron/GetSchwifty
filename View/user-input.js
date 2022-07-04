@@ -3,11 +3,11 @@ class UserInput {
         this.inputValidator = inputValidator;
     }
 
-    receiveSize(inputValidator) {
+    receiveInput() {
         do {
-            var size = prompt("How big do you want the board to be?", 3)
-        } while (this.inputValidator.validate(size));          
+            var input = prompt("How big do you want the board to be?", 3)
+        } while (this.inputValidator.validate(input));          
         
-        return size;
+        return input;
     }
 }
