@@ -10,14 +10,14 @@ import { IntegerInputValidator } from "./Controller/input-validators/integer-inp
 import { StringInputValidator } from "./Controller/input-validators/string-input-validator.js";
 import { StringUserInput } from "./View/input/string-user-input.js";
 import { IntegerUserInput } from "./View/input/integer-user-input.js";
-import { Leaderboard } from "./Model/leaderboard.js";
+import { Leaderboard } from "./Model/leaderboards/leaderboard.js";
 import { SortByScore } from "./Controller/leaderboard-logic/sort-by-score.js";
 import { EndGame } from "./Controller/game-flow/end-game.js";
 import { SwitchesCounter } from "./Controller/board-creation/switches-counter.js";
 import { BoardUpdater } from "./View/output/board-updater.js";
 import { Stopwatch } from "./Controller/time-measure/stopwatch.js";
 import { GameRunner } from "./Controller/game-flow/game-runner.js"
-import { ScoreCreator } from "./Model/score-creator.js";
+import { ScoreCreator } from "./Model/scores/score-creator.js";
 import { BoardChecker } from "./Controller/game-logic/board-checker.js";
 
 var starting_leaderboard = []
@@ -30,8 +30,9 @@ var stopwatch = new Stopwatch();
 
 var stringInputValidator = new StringInputValidator();
 var integerInputValidator = new IntegerInputValidator();
-var stringUserInput = new StringUserInput(stringInputValidator);
-var integerUserInput = new IntegerUserInput(integerInputValidator);
+var stringUserInput = new StringUserInput(stringInputValidator, "What is your name?");
+var integerUserInput = new IntegerUserInput(integerInputValidator, 
+     "How big do you want the board to be?", 3);
 
 var board = new Board(integerUserInput);
 
