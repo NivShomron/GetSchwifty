@@ -15,15 +15,7 @@ class CellsValuesCreator {
             gameNumbers.push(i + 1);
         }
 
-        this.removeRandomValue(gameNumbers);
+        gameNumbers.splice(Math.floor(Math.random()*array.length), 1);
         return this.arrayShuffler.shuffle(gameNumbers);
     }
-
-    removeRandomValue = (array) => {
-        while(array.length){
-           const random = Math.floor(Math.random() * array.length);
-           const el = array.splice(random, 1)[0];
-           console.log(el);
-        }
-    };
 }
