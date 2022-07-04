@@ -30,3 +30,5 @@ class Stopwatch {
         const leadZeroTime = [hour, minutes, seconds, milliseconds].map(time => time < 10 ? `0${time}` : time)
     }
 }
+
+export { Stopwatch };
