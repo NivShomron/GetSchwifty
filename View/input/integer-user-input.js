@@ -1,11 +1,13 @@
 class IntegerUserInput {
-    constructor(integerInputValidator) {
+    constructor(integerInputValidator, question, defaultAnswer) {
         this.integerInputValidator = integerInputValidator;
+        this.question = question;
+        this.defaultAnswer = defaultAnswer;
     }
 
     receive() {
         do {
-            var input = prompt("How big do you want the board to be?", 3)
+            var input = prompt(this.question, this.defaultAnswer)
         } while (!this.integerInputValidator.validate(input));        
         return input;
     }

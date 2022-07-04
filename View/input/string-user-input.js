@@ -1,11 +1,12 @@
 class StringUserInput {
-    constructor(stringInputValidator) {
+    constructor(stringInputValidator, question) {
         this.stringInputValidator = stringInputValidator;
+        this.question = question;
     }
     
     receive() {
         do {
-            var input = prompt("What is your name?")
+            var input = prompt(this.question)
         } while (!this.stringInputValidator.validate(input));
         return input;
     }
