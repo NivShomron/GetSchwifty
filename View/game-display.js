@@ -26,7 +26,6 @@ class GameDisplay {
             }
             document.body.appendChild(toAdd);
         }
-        console.log(1)
     }
 }
 
