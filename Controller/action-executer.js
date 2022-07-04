@@ -9,8 +9,8 @@ class ActionExecuter {
             var cellValue = this.board.getCellAt(cellDecision[0], cellDecision[1]);
             var emptyCell = this.board.getEmptyCell();
     
-            this.board.getCellAt(emptyCell[0], emptyCell[1]) = cellValue;
-            this.board.getCellAt(cellDecision[0], cellDecision[1]) = -1;
+            this.board.setCellAt(emptyCell[0], emptyCell[1], cellValue);
+            this.board.setCellAt(cellDecision[0], cellDecision[1], -1);
         }
     }
 }
