@@ -20,7 +20,7 @@ class Board {
         for (let i = 0; i < this.size; i++) {
             for (let j = 0; j < this.size; j++) {
                 if (this.board[i][j] == -1) {
-                    return (i, j);
+                    return [i, j];
                 }
             }
         }
