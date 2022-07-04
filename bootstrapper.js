@@ -17,7 +17,8 @@ import { SwitchesCounter } from "./Controller/board-creation/switches-counter.js
 import { BoardUpdater } from "./View/board-updater.js";
 import { Stopwatch } from "./Controller/stopwatch.js";
 import { GameRunner } from "./Controller/game-flow/game-runner.js"
-import { ScoreCreator } from "./Model/score-creator.js"
+import { ScoreCreator } from "./Model/score-creator.js";
+import { BoardChecker } from "./Controller/game-logic/board-checker.js";
 
 var starting_leaderboard = []
 var leaderboardSize = 5;
@@ -38,6 +39,7 @@ var boardValidator = new BoardValidator();
 var arrayShuffler = new ArrayShuffler();
 
 var switchesCounter = new SwitchesCounter(board);
+var boardChecker = new BoardChecker();
 var endGame = new EndGame(stopwatch);
 
 var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
@@ -46,7 +48,7 @@ var boardCreator = new BoardCreator(boardValidator, cellsValuesCreator, switches
 var actionValidator = new ActionValidator(board);
 var actionExecuter = new ActionExecuter(board, actionValidator);
 
-var boardUpdater = new BoardUpdater(switchesCounter, endGame);
+var boardUpdater = new BoardUpdater(switchesCounter, boardChecker, endGame);
 
 var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
 
