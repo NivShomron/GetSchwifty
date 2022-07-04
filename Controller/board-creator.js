@@ -14,7 +14,7 @@ class BoardCreator {
                 this.board.addCell(Math.floor(insertPoisiton / 3), insertPoisiton % 3, number)
                 insertPoisiton++;
             });
-        } while (this.boardValidator.validate(this.switchesCounter.count(cellsValues)));
+        } while (this.boardValidator.validate(this.board.size, this.switchesCounter.count(cellsValues), this.board.getEmptyCell()[1]));
     }
 }
 
