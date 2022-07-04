@@ -43,7 +43,7 @@ var boardChecker = new BoardChecker();
 var endGame = new EndGame(stopwatch);
 
 var cellsValuesCreator = new CellsValuesCreator(board, arrayShuffler)
-var boardCreator = new BoardCreator(boardValidator, cellsValuesCreator, switchesCounter);
+var boardCreator = new BoardCreator(boardValidator, cellsValuesCreator, switchesCounter, boardChecker);
 
 var actionValidator = new ActionValidator(board);
 var actionExecuter = new ActionExecuter(board, actionValidator);
