@@ -4,7 +4,7 @@ class UserInput {
     }
     
     receiveName() {
-        var name = prompt("What is your name?")
+        return prompt("What is your name?")
     }
 
     receiveBoardSize() {
