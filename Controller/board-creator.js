@@ -1,20 +1,19 @@
 class BoardCreator {
-    constructor(board, boardValidator, cellsValuesCreator, switchesCounter) {
-        this.board = board;
+    constructor(boardValidator, cellsValuesCreator, switchesCounter) {
         this.boardValidator = boardValidator;
         this.cellsValuesCreator = cellsValuesCreator;
         this.switchesCounter = switchesCounter;
     }
 
-    create() {
+    create(board) {
         do {
-            var cellsValues = this.cellsValuesCreator.create(this.board);
+            var cellsValues = this.cellsValuesCreator.create(board);
             var insertPoisiton = 0;
             cellsValues.forEach(number => {
-                this.board.addCell(Math.floor(insertPoisiton / this.board.size), insertPoisiton % this.board.size, number)
+                board.addCell(Math.floor(insertPoisiton / board.size), insertPoisiton % board.size, number)
                 insertPoisiton++;
             });
-        } while (this.boardValidator.validate(this.board.size, this.switchesCounter.count(cellsValues), this.board.getEmptyCell()[1]));
+        } while (this.boardValidator.validate(board.size, this.switchesCounter.count(cellsValues), board.getEmptyCell()[1]));
     }
 }
 
