@@ -3,7 +3,7 @@ import { ActionValidator } from "./Controller/game-logic/action-validator.js";
 import { ArrayShuffler } from "./Controller/board-creation/array-shuffler.js";
 import { BoardCreator } from "./Controller/board-creation/board-creator.js";
 import { BoardValidator } from "./Controller/board-creation/board-validator.js";
-import { Board } from "./Controller/board.js";
+import { Board } from "./Controller/board/board.js";
 import { CellsValuesCreator } from "./Controller/board-creation/cells-values-creator.js";
 import { GameDisplay } from "./View/output/game-display.js";
 import { IntegerInputValidator } from "./Controller/input-validators/integer-input-validator.js";
@@ -54,10 +54,9 @@ class Bootstrapper {
           var boardUpdater = new BoardUpdater(switchesCounter, boardChecker, endGame);
      
           var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
-     
-          var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch,
+          
+          return new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch,
                scoreCreator, stringUserInput);
-          return gameRunner;
      }
 }
 
