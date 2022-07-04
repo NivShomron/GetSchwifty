@@ -15,8 +15,7 @@ class BoardCreator {
                  number)
                 insertPoisiton++;
             });
-        } while (this.boardValidator.validate(board, this.switchesCounter.count(),
-             board.getEmptyCell()[1], this.boardChecker));
+        } while (this.boardValidator.validate(board, this.switchesCounter.count(), this.boardChecker));
     }
 }
 
