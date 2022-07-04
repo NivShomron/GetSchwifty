@@ -1,7 +1,7 @@
 class Board {
-    constructor(size) {
+    constructor(userInput) {
         this.board = [];
-        this.size = size;
+        this.size = userInput.receiveBoardSize();
 
         for(let i = 0; i < this.size; i++) {
             this.board[i] = new Array(this.size);
