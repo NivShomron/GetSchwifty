@@ -9,7 +9,7 @@ import { GameDisplay } from "./View/game-display.js";
 import { InputValidator } from "./Controller/input-validator.js";
 import { UserInput } from "./View/user-input.js";
 import { Leaderboard } from "./Model/leaderboard.js";
-import { SortByScore } from "./Model/sort-by-score.js";
+import { SortByScore } from "./Controller/sort-by-score.js";
 import { EndGame } from "./Controller/end-game.js";
 import { SwitchesCounter } from "./Controller/switches-counter.js";
 import { BoardUpdater } from "./View/board-updater.js";
