@@ -1,9 +1,9 @@
 class BoardCreator {
-    constructor(board, boardValidator, cellsValuesCreator, switchCounter) {
+    constructor(board, boardValidator, cellsValuesCreator, switchesCounter) {
         this.board = board;
         this.boardValidator = boardValidator;
         this.cellsValuesCreator = cellsValuesCreator;
-        this.switchCounter = switchCounter;
+        this.switchesCounter = switchesCounter;
     }
 
     create() {
@@ -14,6 +14,6 @@ class BoardCreator {
                 this.board.addCell(insertPoisiton/3, insertPoisiton%3, number)
                 insertPoisiton++;
             });
-        } while (this.boardValidator.validate(this.switchCounter.count()));
+        } while (this.boardValidator.validate(this.switchesCounter.count()));
     }
 }
