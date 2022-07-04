@@ -4,7 +4,7 @@ import { ArrayShuffler } from "./Controller/array-shuffler.js";
 import { BoardCreator } from "./Controller/board-creator.js";
 import { BoardValidator } from "./Controller/board-validator.js";
 import { Board } from "./Controller/board.js";
-import { CellsValuesCreator } from "./Controller/cells_values_creator.js";
+import { CellsValuesCreator } from "./Controller/cells-values-creator.js";
 import { GameDisplay } from "./View/game-display.js";
 import { InputValidator } from "./Controller/input-validator.js";
 import { UserInput } from "./View/user-input.js";
