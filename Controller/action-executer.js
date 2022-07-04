@@ -11,7 +11,6 @@ class ActionExecuter {
     
             this.board[emptyCell[0]][emptyCell[1]] = cellValue;
             this.board[cellDecision[0]][cellDecision[1]] = undefined;
-            // display changes
         }
     }
 }
