@@ -11,7 +11,7 @@ class BoardCreator {
             var cellsValues = this.cellsValuesCreator.create(this.board);
             var insertPoisiton = 0;
             cellsValues.forEach(number => {
-                this.board.addCell(Math.floor(insertPoisiton / 3), insertPoisiton % 3, number)
+                this.board.addCell(Math.floor(insertPoisiton / this.board.size), insertPoisiton % this.board.size, number)
                 insertPoisiton++;
             });
         } while (this.boardValidator.validate(this.board.size, this.switchesCounter.count(cellsValues), this.board.getEmptyCell()[1]));

@@ -8,7 +8,7 @@ class BoardUpdater {
         var allButtons = document.getElementsByTagName("button");
         for (let i = 0; i < allButtons.length; i++) {
             var button = allButtons.item(i);
-            button.innerHTML = board.getCellAt(Math.floor(i / 3), i % 3);
+            button.innerHTML = board.getCellAt(Math.floor(i / board.size), i % board.size);
         }
 
         var cellsValues = board.getFlattenedBoard();
