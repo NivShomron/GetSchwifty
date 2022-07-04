@@ -1,24 +1,24 @@
-import { ActionExecuter } from "./Controller/game-logic/action-executer.js";
-import { ActionValidator } from "./Controller/game-logic/action-validator.js";
-import { ArrayShuffler } from "./Controller/board-creation/array-shuffler.js";
-import { BoardCreator } from "./Controller/board-creation/board-creator.js";
-import { BoardValidator } from "./Controller/board-creation/board-validator.js";
-import { Board } from "./Controller/board/board.js";
-import { CellsValuesCreator } from "./Controller/board-creation/cells-values-creator.js";
-import { GameDisplay } from "./View/output/game-display.js";
-import { IntegerInputValidator } from "./Controller/input-validators/integer-input-validator.js";
-import { StringInputValidator } from "./Controller/input-validators/string-input-validator.js";
-import { StringUserInput } from "./View/input/string-user-input.js";
-import { IntegerUserInput } from "./View/input/integer-user-input.js";
-import { Leaderboard } from "./Model/leaderboards/leaderboard.js";
-import { SortByScore } from "./Controller/leaderboard-logic/sort-by-score.js";
-import { EndGame } from "./Controller/game-flow/end-game.js";
-import { SwitchesCounter } from "./Controller/board-creation/switches-counter.js";
-import { BoardUpdater } from "./Controller/game-flow/board-updater.js";
-import { Stopwatch } from "./Controller/time-measure/stopwatch.js";
+import { ActionExecuter } from "./Controller/game-logic/action-executer.js"
+import { ActionValidator } from "./Controller/game-logic/action-validator.js"
+import { ArrayShuffler } from "./Controller/board-creation/array-shuffler.js"
+import { BoardCreator } from "./Controller/board-creation/board-creator.js"
+import { BoardValidator } from "./Controller/board-creation/board-validator.js"
+import { Board } from "./Controller/board/board.js"
+import { CellsValuesCreator } from "./Controller/board-creation/cells-values-creator.js"
+import { GameDisplay } from "./View/output/game-display.js"
+import { IntegerInputValidator } from "./Controller/input-validators/integer-input-validator.js"
+import { StringInputValidator } from "./Controller/input-validators/string-input-validator.js"
+import { StringUserInput } from "./View/input/string-user-input.js"
+import { IntegerUserInput } from "./View/input/integer-user-input.js"
+import { Leaderboard } from "./Model/leaderboards/leaderboard.js"
+import { SortByScore } from "./Controller/leaderboard-logic/sort-by-score.js"
+import { EndGame } from "./Controller/game-flow/end-game.js"
+import { SwitchesCounter } from "./Controller/board-creation/switches-counter.js"
+import { BoardUpdater } from "./Controller/game-flow/board-updater.js"
+import { Stopwatch } from "./Controller/time-measure/stopwatch.js"
 import { GameRunner } from "./Controller/game-flow/game-runner.js"
-import { ScoreCreator } from "./Model/scores/score-creator.js";
-import { BoardChecker } from "./Controller/game-logic/board-checker.js";
+import { ScoreCreator } from "./Model/scores/score-creator.js"
+import { BoardChecker } from "./Controller/game-logic/board-checker.js"
 
 class Bootstrapper {
      init() {
