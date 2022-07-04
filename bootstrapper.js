@@ -44,5 +44,5 @@ var boardUpdater = new BoardUpdater(switchesCounter, endGame);
 
 var gameDisplay = new GameDisplay(actionExecuter, boardUpdater);
 
-var gameRunner = new GameRunner(board, boardCreator, gameDisplay);
+var gameRunner = new GameRunner(board, boardCreator, gameDisplay, leaderboard, stopwatch);
 gameRunner.run();
