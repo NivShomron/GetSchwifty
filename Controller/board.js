@@ -12,6 +12,10 @@ class Board {
         return this.board[x][y];
     }
 
+    setCellAt(x, y, value) {
+        this.board[x][y] = value;
+    }
+
     addCell(x, y, value) {
         this.board[x][y] = value;
     }
