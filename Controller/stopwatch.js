@@ -5,10 +5,12 @@ class Stopwatch {
 
     start() {
         this.startTime = Date.now();
+        this.running = true;
     }
 
     stop() {
         this.elapsedTime += Date.now() - this.startTime
+        this.running = false;
     }
 
     reset() {
